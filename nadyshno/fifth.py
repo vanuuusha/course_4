@@ -3,7 +3,7 @@ import numpy as np
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 
-t_max = 50
+t_max = 5000
 t = np.array([i for i in range(1, t_max)])
 T = np.array([12, 31, 28, 22])
 lambdas = np.ones_like(T) / T

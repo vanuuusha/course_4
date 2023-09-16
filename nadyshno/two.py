@@ -2,10 +2,12 @@ import math
 
 import matplotlib.pyplot as plt
 
-raspr_lambda = 1 / 24
+raspr_lambda = 1 / 48
 n = 2
-t_max = 500
+t_max = 15000
 t = [i for i in range(1, t_max)]
+
+
 def draw_time_working():
     F = [math.exp(-raspr_lambda*now_time)*sum([(raspr_lambda*now_time)**k / math.factorial(k) for k in range(0, n)]) for now_time in t]
     plt.title('Вероятность безотказность работы')
@@ -13,6 +15,7 @@ def draw_time_working():
     plt.xlabel('t')
     plt.ylabel('R(t)')
     plt.show()
+
 
 def draw_intensiv():
     intensiv = [(raspr_lambda ** n * now_t ** (n-1)) / math.factorial(n-1) * 1 / sum([(raspr_lambda*now_t)**k / math.factorial(k) for k in range(0, n)]) for now_t in t]
@@ -30,6 +33,7 @@ def pdf():
     plt.xlabel('t')
     plt.ylabel('f(t)')
     plt.show()
+
 
 draw_time_working()
 draw_intensiv()
